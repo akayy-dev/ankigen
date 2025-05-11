@@ -8,7 +8,6 @@ import (
 // Interface for different AI providers (e.g Gemini, Ollama)
 type AIProvider interface {
 	attachFile() error
-
 }
 
 type AIService struct {
@@ -20,6 +19,6 @@ func (ai AIService) startup(ctx context.Context) {
 	ai.ctx = ctx
 }
 
-func (ai AIService) AddFile(fname string) {
+func (ai AIService) AddFile(content []byte, fname string) {
 	fmt.Printf("Adding file of name %s\n", fname)
 }
